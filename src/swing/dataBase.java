@@ -17,7 +17,7 @@ public class dataBase extends JFrame {
 
         // Table content
         String[][] data = {
-                {"1", "Kim Dokja", "", "Masculí", "Omniscient Reader's Viewpoint", "/swing/img/dokja150.jpg"},
+                {"1", "Kim Dokja", "", "Masculí", "Omniscient Reader's Viewpoint", "/swing/img/dokja.jpg"},
                 {"2", "Killua Zoldyck", "", "Masculí", "Hunter x Hunter", ""},
                 {"3", "Kuroko Tetsuya", "", "Masculí", "Kuroko no Basket", ""},
                 {"4", "Klein Moretti", "", "Masculí", "Lord Of The Mysteries", ""},
@@ -55,7 +55,7 @@ public class dataBase extends JFrame {
         table.getColumnModel().getColumn(5).setPreferredWidth(150);
 
         // Set the row height based on the height of the image
-        table.setRowHeight(260);
+        table.setRowHeight(240);
 
         // Window listener
         addWindowListener(new WindowAdapter() {
