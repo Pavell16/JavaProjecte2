@@ -6,6 +6,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 public class Face extends JFrame implements ActionListener{
     private JLabel title;
+
+    private JButton characterList, PullACharacter, ViewIlustrations;
     public Face(){
         //Title Start
         setLayout(null);
