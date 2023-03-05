@@ -17,26 +17,26 @@ public class auxiliar extends JFrame {
 
         // Table content
         String[][] data = {
-                {"1", "Kim Dokja", "", "Masculí", "Omniscient Reader's Viewpoint", "/swing/img/dokja150.jpg"},
-                {"2", "Killua Zoldyck", "", "Masculí", "Hunter x Hunter", ""},
-                {"3", "Kuroko Tetsuya", "", "Masculí", "Kuroko no Basket", ""},
-                {"4", "Klein Moretti", "", "Masculí", "Lord Of The Mysteries", ""},
-                {"5", "Lelouch Lamperouge", "", "Masculí", "Code Geass", ""},
-                {"6", "Saber", "", "Femení", "Fate/Stay Night", ""},
-                {"7", "Asta", "", "Masculí", "Black Clover", ""},
-                {"8", "Penelope Eckart", "", "Femení", "Death Is the Only Ending for the Villainess", ""},
-                {"9", "Pyo Wol", "", "Masculí", "Reaper of the Drifting Moon", ""},
-                {"10", "Rick Sanchez", "", "Masculí", "Rick y Morty", ""},
-                {"11", "Dunn Smith", "", "Masculí", "Lord Of The Mysteries", ""},
-                {"12", "Sung Jin-Woo", "", "Masculí", "Solo Leveling", ""},
-                {"13", "Inuyasha", "", "Masculí", "Inuyasha", ""},
-                {"14", "Sasha Brown", "", "Femení", "Shingeki no Kyojin", ""},
-                {"15", "Nezuko Kamado", "", "Femení", "Kimetsu no Yaiba", ""},
-                {"16", "Winry Rockbell", "", "Femení", "FullMetal Alchemist Brotherhood", ""},
-                {"17", "Satoru Gojo", "", "Masculí", "Jujutsu Kaisen", ""},
-                {"18", "Edward Elric", "", "Masculí", "FullMetal Alchemist Brotherhood", ""},
-                {"19", "Sukuna", "", "Masculí", "Jujutsu Kaisen", ""},
-                {"20", "Levi Ackerman", "", "Masculí", "Shingeki no Kyojin", ""}
+                {"1", "Kim Dokja", "", "Masculí", "Omniscient Reader's Viewpoint", "/swing/img/dokja.jpg"},
+                {"2", "Killua Zoldyck", "", "Masculí", "Hunter x Hunter", "/swing/img/KilluaZoldyck.png"},
+                {"3", "Kuroko Tetsuya", "", "Masculí", "Kuroko no Basket", "/swing/img/KurokoTetsuya.png"},
+                {"4", "Klein Moretti", "", "Masculí", "Lord Of The Mysteries", "/swing/img/Klein.jpg"},
+                {"5", "Lelouch Lamperouge", "", "Masculí", "Code Geass", "/swing/img/LelouchLamperouge.png"},
+                {"6", "Saber", "", "Femení", "Fate/Stay Night", "/swing/img/Saber.png"},
+                {"7", "Asta", "", "Masculí", "Black Clover", "/swing/img/Asta.png"},
+                {"8", "Penelope Eckart", "", "Femení", "Death Is the Only Ending for the Villainess", "/swing/img/PenelopeEckart.png"},
+                {"9", "Pyo Wol", "", "Masculí", "Reaper of the Drifting Moon", "/swing/img/PyoWol.jpg"},
+                {"10", "Rick Sanchez", "", "Masculí", "Rick y Morty", "/swing/img/RickSanchez.png"},
+                {"11", "Dunn Smith", "", "Masculí", "Lord Of The Mysteries", "/swing/img/dunn.jpg"},
+                {"12", "Sung Jin-Woo", "", "Masculí", "Solo Leveling", "/swing/img/SungJin-Woo.png"},
+                {"13", "Inuyasha", "", "Masculí", "Inuyasha", "/swing/img/Inuyasha.png"},
+                {"14", "Sasha Braus", "", "Femení", "Shingeki no Kyojin", "/swing/img/SashaBraus.png"},
+                {"15", "Nezuko Kamado", "", "Femení", "Kimetsu no Yaiba", "/swing/img/NezukoKamado.png"},
+                {"16", "Winry Rockbell", "", "Femení", "FullMetal Alchemist Brotherhood", "/swing/img/WinryRockbell.png"},
+                {"17", "Satoru Gojo", "", "Masculí", "Jujutsu Kaisen", "/swing/img/SatoruGojo.png"},
+                {"18", "Edward Elric", "", "Masculí", "FullMetal Alchemist Brotherhood", "/swing/img/EdwardElric.png"},
+                {"19", "Sukuna", "", "Masculí", "Jujutsu Kaisen", "/swing/img/Sukuna.png"},
+                {"20", "Levi Ackerman", "", "Masculí", "Shingeki no Kyojin", "/swing/img/LeviAckerman.png"}
         };
         String[] columnNames = {"ID", "Nom", "Preu", "Genere", "Anime", "IMG"};
 
