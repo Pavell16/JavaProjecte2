@@ -16,7 +16,7 @@ public class dataBase extends JFrame {
     public dataBase() {
 
         // Table content
-        String[][] data = {
+          String[][] data = {
                 {"1", "Kim Dokja", "", "Masculí", "Omniscient Reader's Viewpoint", "/swing/img/dokja.jpg"},
                 {"2", "Killua Zoldyck", "", "Masculí", "Hunter x Hunter", "/swing/img/KilluaZoldyck_redim.jpg"},
                 {"3", "Kuroko Tetsuya", "", "Masculí", "Kuroko no Basket", "/swing/img/KurokoTetsuya.jpg"},
