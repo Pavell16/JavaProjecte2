@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 public class dataBase extends JFrame {
-    ImageRenderer imageRenderer = new ImageRenderer();
+    swing.dataBase.ImageRenderer imageRenderer = new swing.dataBase.ImageRenderer();
 
 
     public static void main(String[] args) {
@@ -18,25 +18,25 @@ public class dataBase extends JFrame {
         // Table content
         String[][] data = {
                 {"1", "Kim Dokja", "", "Masculí", "Omniscient Reader's Viewpoint", "/swing/img/dokja.jpg"},
-                {"2", "Killua Zoldyck", "", "Masculí", "Hunter x Hunter", "/swing/img/KilluaZoldyck.png"},
-                {"3", "Kuroko Tetsuya", "", "Masculí", "Kuroko no Basket", "/swing/img/KurokoTetsuya.png"},
-                {"4", "Klein Moretti", "", "Masculí", "Lord Of The Mysteries", "/swing/img/Klein.jpg"},
-                {"5", "Lelouch Lamperouge", "", "Masculí", "Code Geass", "/swing/img/LelouchLamperouge.png"},
-                {"6", "Saber", "", "Femení", "Fate/Stay Night", "/swing/img/Saber.png"},
-                {"7", "Asta", "", "Masculí", "Black Clover", "/swing/img/Asta.png"},
-                {"8", "Penelope Eckart", "", "Femení", "Death Is the Only Ending for the Villainess", "/swing/img/PenelopeEckart.png"},
-                {"9", "Pyo Wol", "", "Masculí", "Reaper of the Drifting Moon", "/swing/img/PyoWol.jpg"},
-                {"10", "Rick Sanchez", "", "Masculí", "Rick y Morty", "/swing/img/RickSanchez.png"},
-                {"11", "Dunn Smith", "", "Masculí", "Lord Of The Mysteries", "/swing/img/dunn.jpg"},
-                {"12", "Sung Jin-Woo", "", "Masculí", "Solo Leveling", "/swing/img/SungJin-Woo.png"},
-                {"13", "Inuyasha", "", "Masculí", "Inuyasha", "/swing/img/Inuyasha.png"},
-                {"14", "Sasha Braus", "", "Femení", "Shingeki no Kyojin", "/swing/img/SashaBraus.png"},
-                {"15", "Nezuko Kamado", "", "Femení", "Kimetsu no Yaiba", "/swing/img/NezukoKamado.png"},
-                {"16", "Winry Rockbell", "", "Femení", "FullMetal Alchemist Brotherhood", "/swing/img/WinryRockbell.png"},
-                {"17", "Satoru Gojo", "", "Masculí", "Jujutsu Kaisen", "/swing/img/SatoruGojo.png"},
-                {"18", "Edward Elric", "", "Masculí", "FullMetal Alchemist Brotherhood", "/swing/img/EdwardElric.png"},
-                {"19", "Sukuna", "", "Masculí", "Jujutsu Kaisen", "/swing/img/Sukuna.png"},
-                {"20", "Levi Ackerman", "", "Masculí", "Shingeki no Kyojin", "/swing/img/LeviAckerman.png"}
+                {"2", "Killua Zoldyck", "", "Masculí", "Hunter x Hunter", "/swing/img/KilluaZoldyck_redim.jpg"},
+                {"3", "Kuroko Tetsuya", "", "Masculí", "Kuroko no Basket", "/swing/img/KurokoTetsuya.jpg"},
+                {"4", "Klein Moretti", "", "Masculí", "Lord Of The Mysteries", "/swing/img/KleinMoretti.jpg"},
+                {"5", "Lelouch Lamperouge", "", "Masculí", "Code Geass", "/swing/img/LelouchLamperouge.jpg"},
+                {"6", "Saber", "", "Femení", "Fate/Stay Night", "/swing/img/Saber.jpg"},
+                {"7", "Asta", "", "Masculí", "Black Clover", "/swing/img/Asta.jpg"},
+                {"8", "Penelope Eckart", "", "Femení", "Death Is the Only Ending for the Villainess", "/swing/img/PenelopeEckart.jpg"},
+                {"9", "Pyo Wol", "", "Masculí", "Reaper of the Drifting Moon", "/swing/img/PyoWolredim.jpg"},
+                {"10", "Rick Sanchez", "", "Masculí", "Rick y Morty", "/swing/img/RickSanchez.jpg"},
+                {"11", "Dunn Smith", "", "Masculí", "Lord Of The Mysteries", "/swing/img/DunnSmith.jpg"},
+                {"12", "Sung Jin-Woo", "", "Masculí", "Solo Leveling", "/swing/img/SunJinWoo.jpg"},
+                {"13", "Inuyasha", "", "Masculí", "Inuyasha", "/swing/img/Inuyasha.jpg"},
+                {"14", "Sasha Braus", "", "Femení", "Shingeki no Kyojin", "/swing/img/SashaBraus.jpg"},
+                {"15", "Nezuko Kamado", "", "Femení", "Kimetsu no Yaiba", "/swing/img/NezukoKamado.jpg"},
+                {"16", "Winry Rockbell", "", "Femení", "FullMetal Alchemist Brotherhood", "/swing/img/WinryRockbell.jpg"},
+                {"17", "Satoru Gojo", "", "Masculí", "Jujutsu Kaisen", "/swing/img/SatoruGojo.jpg"},
+                {"18", "Edward Elric", "", "Masculí", "FullMetal Alchemist Brotherhood", "/swing/img/EdwardElric.jpg"},
+                {"19", "Sukuna", "", "Masculí", "Jujutsu Kaisen", "/swing/img/Sukuna.jpg"},
+                {"20", "Levi Ackerman", "", "Masculí", "Shingeki no Kyojin", "/swing/img/LeviAckerman.jpg"}
         };
         String[] columnNames = {"ID", "Nom", "Preu", "Genere", "Anime", "IMG"};
 
@@ -46,7 +46,7 @@ public class dataBase extends JFrame {
         table.getColumnModel().getColumn(5).setCellRenderer(imageRenderer);
 
         // Set custom renderer for image column
-        table.getColumnModel().getColumn(5).setCellRenderer(new ImageRenderer());
+        table.getColumnModel().getColumn(5).setCellRenderer(new swing.dataBase.ImageRenderer());
 
         // Scrollpane for table
         JScrollPane scrollPane = new JScrollPane(table);
@@ -55,7 +55,7 @@ public class dataBase extends JFrame {
         table.getColumnModel().getColumn(5).setPreferredWidth(150);
 
         // Set the row height based on the height of the image
-        table.setRowHeight(240);
+        table.setRowHeight(260);
 
         // Window listener
         addWindowListener(new WindowAdapter() {
