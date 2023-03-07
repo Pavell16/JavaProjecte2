@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 public class dataBase extends JFrame {
-    swing.dataBase.ImageRenderer imageRenderer = new swing.dataBase.ImageRenderer();
+    ImageRenderer imageRenderer = new ImageRenderer();
 
 
     public static void main(String[] args) {
@@ -46,7 +46,7 @@ public class dataBase extends JFrame {
         table.getColumnModel().getColumn(5).setCellRenderer(imageRenderer);
 
         // Set custom renderer for image column
-        table.getColumnModel().getColumn(5).setCellRenderer(new swing.dataBase.ImageRenderer());
+        table.getColumnModel().getColumn(5).setCellRenderer(new ImageRenderer());
 
         // Scrollpane for table
         JScrollPane scrollPane = new JScrollPane(table);
