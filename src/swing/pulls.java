@@ -4,36 +4,38 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Random;
+import java.util.regex.Pattern;
 
 
 public class pulls extends JFrame implements ActionListener {
-    private JLabel title, Name, Gender, Anime;
-    public String Cname = "", CGender = "", Canime = "", Cphoto = "";
-    public int dineros;
+    private JLabel title, Coins;
+    public String Cname = "", CGender = "", Canime = "", Cphoto = "", price="";
+    public int doraCoins = 0;
     private static JTextField comands;
     private JButton send;
 
     public  String[][] characters = {
-        {"1", "Kim Dokja", "", "Masculí", "Omniscient Reader's Viewpoint", "/swing/img/dokja.jpg"},
-        {"2", "Killua Zoldyck", "", "Masculí", "Hunter x Hunter", "/swing/img/KilluaZoldyck_redim.jpg"},
-        {"3", "Kuroko Tetsuya", "", "Masculí", "Kuroko no Basket", "/swing/img/KurokoTetsuya.jpg"},
-        {"4", "Klein Moretti", "", "Masculí", "Lord Of The Mysteries", "/swing/img/KleinMoretti.jpg"},
-        {"5", "Lelouch Lamperouge", "", "Masculí", "Code Geass", "/swing/img/LelouchLamperouge.jpg"},
-        {"6", "Saber", "", "Femení", "Fate/Stay Night", "/swing/img/Saber.jpg"},
-        {"7", "Asta", "", "Masculí", "Black Clover", "/swing/img/Asta.jpg"},
-        {"8", "Penelope Eckart", "", "Femení", "Death Is the Only Ending for the Villainess", "/swing/img/PenelopeEckart.jpg"},
-        {"9", "Pyo Wol", "", "Masculí", "Reaper of the Drifting Moon", "/swing/img/PyoWolredim.jpg"},
-        {"10", "Rick Sanchez", "", "Masculí", "Rick y Morty", "/swing/img/RickSanchez.jpg"},
-        {"11", "Dunn Smith", "", "Masculí", "Lord Of The Mysteries", "/swing/img/DunnSmith.jpg"},
-        {"12", "Sung Jin-Woo", "", "Masculí", "Solo Leveling", "/swing/img/SunJinWoo.jpg"},
-        {"13", "Inuyasha", "", "Masculí", "Inuyasha", "/swing/img/Inuyasha.jpg"},
-        {"14", "Sasha Braus", "", "Femení", "Shingeki no Kyojin", "/swing/img/SashaBraus.jpg"},
-        {"15", "Nezuko Kamado", "", "Femení", "Kimetsu no Yaiba", "/swing/img/NezukoKamado.jpg"},
-        {"16", "Winry Rockbell", "", "Femení", "FullMetal Alchemist Brotherhood", "/swing/img/WinryRockbell.jpg"},
-        {"17", "Satoru Gojo", "", "Masculí", "Jujutsu Kaisen", "/swing/img/SatoruGojo.jpg"},
-        {"18", "Edward Elric", "", "Masculí", "FullMetal Alchemist Brotherhood", "/swing/img/EdwardElric.jpg"},
-        {"19", "Sukuna", "", "Masculí", "Jujutsu Kaisen", "/swing/img/Sukuna.jpg"},
-        {"20", "Levi Ackerman", "", "Masculí", "Shingeki no Kyojin", "/swing/img/LeviAckerman.jpg"}
+        {"1", "Kim Dokja", "220", "Masculí", "Omniscient Reader's Viewpoint", "/swing/img/dokja.jpg"},
+        {"2", "Killua Zoldyck", "310", "Masculí", "Hunter x Hunter", "/swing/img/KilluaZoldyck_redim.jpg"},
+        {"3", "Kuroko Tetsuya", "180", "Masculí", "Kuroko no Basket", "/swing/img/KurokoTetsuya.jpg"},
+        {"4", "Klein Moretti", "200", "Masculí", "Lord Of The Mysteries", "/swing/img/KleinMoretti.jpg"},
+        {"5", "Lelouch Lamperouge", "310", "Masculí", "Code Geass", "/swing/img/LelouchLamperouge.jpg"},
+        {"6", "Saber", "570", "Femení", "Fate/Stay Night", "/swing/img/Saber.jpg"},
+        {"7", "Asta", "430", "Masculí", "Black Clover", "/swing/img/Asta.jpg"},
+        {"8", "Penelope Eckart", "80", "Femení", "Death Is the Only Ending for the Villainess", "/swing/img/PenelopeEckart.jpg"},
+        {"9", "Pyo Wol", "260", "Masculí", "Reaper of the Drifting Moon", "/swing/img/PyoWolredim.jpg"},
+        {"10", "Rick Sanchez", "50", "Masculí", "Rick y Morty", "/swing/img/RickSanchez.jpg"},
+        {"11", "Dunn Smith", "150", "Masculí", "Lord Of The Mysteries", "/swing/img/DunnSmith.jpg"},
+        {"12", "Sung Jin-Woo", "520", "Masculí", "Solo Leveling", "/swing/img/SunJinWoo.jpg"},
+        {"13", "Inuyasha", "140", "Masculí", "Inuyasha", "/swing/img/Inuyasha.jpg"},
+        {"14", "Sasha Braus", "210", "Femení", "Shingeki no Kyojin", "/swing/img/SashaBraus.jpg"},
+        {"15", "Nezuko Kamado", "600", "Femení", "Kimetsu no Yaiba", "/swing/img/NezukoKamado.jpg"},
+        {"16", "Winry Rockbell", "90", "Femení", "FullMetal Alchemist Brotherhood", "/swing/img/WinryRockbell.jpg"},
+        {"17", "Satoru Gojo", "590", "Masculí", "Jujutsu Kaisen", "/swing/img/SatoruGojo.jpg"},
+        {"18", "Edward Elric", "350", "Masculí", "FullMetal Alchemist Brotherhood", "/swing/img/EdwardElric.jpg"},
+        {"19", "Sukuna", "400", "Masculí", "Jujutsu Kaisen", "/swing/img/Sukuna.jpg"},
+        {"20", "Levi Ackerman", "500", "Masculí", "Shingeki no Kyojin", "/swing/img/LeviAckerman.jpg"}
     };
     public pulls(){
         //Title Start
@@ -45,7 +47,7 @@ public class pulls extends JFrame implements ActionListener {
         //Title END
 
         //comands
-        comands = new JTextField("comands");
+        comands = new JTextField("$ha");
         comands.setBounds(130, 100, 270,30);
         add(comands);
         //comands END
@@ -57,30 +59,11 @@ public class pulls extends JFrame implements ActionListener {
         add(send);
         //Send END
 
-        //Character Name
-        Name = new JLabel("Name: " + Cname);
-        Name.setBounds(130,200,600,30);
-        add(Name);
-        //Character name END
-
-        //Character Gender
-        Gender = new JLabel("Genere: " + CGender);
-        Gender.setBounds(130,220,600,30);
-        add(Gender);
-        //Character Gender END
-
-        //Character Anime
-        Anime = new JLabel("Anime: " + CGender);
-        Anime.setBounds(130,240,600,30);
-        add(Anime);
-        //Character Anime END
-
-        //Character Photo
-        ImageIcon icon = new ImageIcon(getClass().getResource(characters[3][5]));
-        JLabel label = new JLabel(icon);
-        add(label);
-        //Character Photo END
-
+        //DoraCoins
+        Coins = new JLabel("DoraCoins" + doraCoins);
+        Coins.setBounds(400,5,100,30);
+        add(Coins);
+        //DoraCoins
     }
 
     public static void main(String args[]){
@@ -96,19 +79,55 @@ public class pulls extends JFrame implements ActionListener {
 
     }
 
-    public void pullCharacter(){
 
+    public void pullCharacter(){
+        Random random = new Random();
+        int characterpull = random.nextInt((20-1)+1)+1;
+
+        Cname = characters[characterpull-1][1];
+        price = characters[characterpull-1][2];
+        doraCoins = doraCoins + Integer.parseInt(characters[characterpull-1][2]);
+        Coins.setText("DoraCoins" + doraCoins);
+        CGender = characters[characterpull-1][3];
+        Canime = characters[characterpull-1][4];
+        ImageIcon icon = new ImageIcon(getClass().getResource(characters[characterpull-1][5]));
+        JLabel foto = new JLabel(icon);
+
+        // Jpanel per a combinar la iatge del personatge amb la seva informació
+        JPanel panel = new JPanel(new BorderLayout());
+        panel.add(new JLabel("<html><b>Nom:</b> " + Cname + "<br>" +
+                "<b>DoraCoins:</b> "+ price + "<br>" +
+                "<b>Genere:</b> " + CGender + "<br>" +
+                "<b>Anime:</b> " + Canime + "</html>"), BorderLayout.CENTER);
+        panel.add(foto, BorderLayout.SOUTH);
+
+
+        JOptionPane.showMessageDialog(null, panel, "Pull",
+                JOptionPane.INFORMATION_MESSAGE);
     };
 
+    public String getComand(){
+        String comand = comands.getText();
+        Pattern comandPattern = Pattern.compile("\\$");
+        String[] command = comandPattern.split(comand);
+
+
+        return command[1];
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == send){
-            Cname = comands.getText();
-            Name.setText("Name: "+ Cname);
-            ImageIcon icon2 = new ImageIcon(getClass().getResource(characters[3][5]));
-            JLabel label2 = new JLabel(icon2);
-            JOptionPane.showMessageDialog(null, label2 );
+            String command = getComand();
+            switch (command){
+                case "ha":
+                    pullCharacter();
+                    break;
+                default:
+                    JOptionPane.showMessageDialog(null, "Ho hi ha cap comanda així");
+                    break;
+            }
+
 
 
         }
