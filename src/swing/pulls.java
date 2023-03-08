@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
 public class pulls extends JFrame implements ActionListener {
     private JLabel title, Coins;
     public String Cname = "", CGender = "", Canime = "", Cphoto = "", price="";
-    public int doraCoins = 0;
+    public int doraCoins = 0, counter = 10;
     private static JTextField comands;
     private JButton send;
 
@@ -121,7 +121,22 @@ public class pulls extends JFrame implements ActionListener {
             String command = getComand();
             switch (command){
                 case "ha":
-                    pullCharacter();
+                    counter--;
+                    if (counter > 0){
+                        pullCharacter();
+                    }else{
+                        JOptionPane.showMessageDialog(null, "Sense Pulls, prova mes tard");
+                        counter = 0;
+                    }
+
+                    break;
+                case "tu":
+                    JOptionPane.showMessageDialog(null, "Pulls restants: " + counter);
+                    break;
+                case "rolls":
+                    counter = counter + 10;
+                    JOptionPane.showMessageDialog(null, "S'han afegit 10 pulls\n" +
+                            "Pulls restants: " + counter);
                     break;
                 default:
                     JOptionPane.showMessageDialog(null, "Ho hi ha cap comanda així");
