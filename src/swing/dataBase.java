@@ -58,6 +58,8 @@ public class dataBase extends JFrame {
         table.setRowHeight(260);
 
         // Window listener
+
+
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
                 System.exit(0);
