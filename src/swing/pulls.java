@@ -80,7 +80,7 @@ public class pulls extends JFrame implements ActionListener {
     }
 
 
-    public void pullCharacter(){
+    public void pullCharacterMale(){
         Random random = new Random();
         int characterpull = random.nextInt((20-1)+1)+1;
 
@@ -92,18 +92,52 @@ public class pulls extends JFrame implements ActionListener {
         Canime = characters[characterpull-1][4];
         ImageIcon icon = new ImageIcon(getClass().getResource(characters[characterpull-1][5]));
         JLabel foto = new JLabel(icon);
+        if (CGender.equals("Masculí")){
+            // Jpanel per a combinar la iatge del personatge amb la seva informació
+            JPanel panel = new JPanel(new BorderLayout());
+            panel.add(new JLabel("<html><b>Nom:</b> " + Cname + "<br>" +
+                    "<b>DoraCoins:</b> "+ price + "<br>" +
+                    "<b>Genere:</b> " + CGender + "<br>" +
+                    "<b>Anime:</b> " + Canime + "</html>"), BorderLayout.CENTER);
+            panel.add(foto, BorderLayout.SOUTH);
 
-        // Jpanel per a combinar la iatge del personatge amb la seva informació
-        JPanel panel = new JPanel(new BorderLayout());
-        panel.add(new JLabel("<html><b>Nom:</b> " + Cname + "<br>" +
-                "<b>DoraCoins:</b> "+ price + "<br>" +
-                "<b>Genere:</b> " + CGender + "<br>" +
-                "<b>Anime:</b> " + Canime + "</html>"), BorderLayout.CENTER);
-        panel.add(foto, BorderLayout.SOUTH);
+
+            JOptionPane.showMessageDialog(null, panel, "Pull",
+                    JOptionPane.INFORMATION_MESSAGE);
+        }else {
+            pullCharacterMale();
+        }
+
+    };
+
+    public void pullCharacterFemale(){
+        Random random = new Random();
+        int characterpull = random.nextInt((20-1)+1)+1;
+
+        Cname = characters[characterpull-1][1];
+        price = characters[characterpull-1][2];
+        doraCoins = doraCoins + Integer.parseInt(characters[characterpull-1][2]);
+        Coins.setText("DoraCoins" + doraCoins);
+        CGender = characters[characterpull-1][3];
+        Canime = characters[characterpull-1][4];
+        ImageIcon icon = new ImageIcon(getClass().getResource(characters[characterpull-1][5]));
+        JLabel foto = new JLabel(icon);
+        if (CGender.equals("Femení")){
+            // Jpanel per a combinar la iatge del personatge amb la seva informació
+            JPanel panel = new JPanel(new BorderLayout());
+            panel.add(new JLabel("<html><b>Nom:</b> " + Cname + "<br>" +
+                    "<b>DoraCoins:</b> "+ price + "<br>" +
+                    "<b>Genere:</b> " + CGender + "<br>" +
+                    "<b>Anime:</b> " + Canime + "</html>"), BorderLayout.CENTER);
+            panel.add(foto, BorderLayout.SOUTH);
 
 
-        JOptionPane.showMessageDialog(null, panel, "Pull",
-                JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, panel, "Pull",
+                    JOptionPane.INFORMATION_MESSAGE);
+        }else {
+            pullCharacterFemale();
+        }
+
     };
 
     public String getComand(){
@@ -123,7 +157,7 @@ public class pulls extends JFrame implements ActionListener {
                 case "ha":
                     counter--;
                     if (counter > 0){
-                        pullCharacter();
+                        pullCharacterMale();
                     }else{
                         JOptionPane.showMessageDialog(null, "Sense Pulls, prova mes tard");
                         counter = 0;
@@ -137,6 +171,15 @@ public class pulls extends JFrame implements ActionListener {
                     counter = counter + 10;
                     JOptionPane.showMessageDialog(null, "S'han afegit 10 pulls\n" +
                             "Pulls restants: " + counter);
+                    break;
+                case "wa":
+                    counter--;
+                    if (counter > 0){
+                        pullCharacterFemale();
+                    }else{
+                        JOptionPane.showMessageDialog(null, "Sense Pulls, prova mes tard");
+                        counter = 0;
+                    }
                     break;
                 default:
                     JOptionPane.showMessageDialog(null, "Ho hi ha cap comanda així");
