@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
 import java.util.regex.Pattern;
+import java.io.IOException;
 
 
 public class pulls extends JFrame implements ActionListener {
@@ -140,13 +141,32 @@ public class pulls extends JFrame implements ActionListener {
 
     };
 
+    public void ricktroll(){
+
+        String url = "https://www.youtube.com/watch?v=mCdA4bJAGGk";
+        String firefoxPath = "C:\\Program Files\\Mozilla Firefox\\firefox.exe";
+        try {
+            Runtime.getRuntime().exec(new String[] { firefoxPath, url });
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    };
+
     public String getComand(){
         String comand = comands.getText();
         Pattern comandPattern = Pattern.compile("\\$");
-        String[] command = comandPattern.split(comand);
+
+        try{
+            String[] command = comandPattern.split(comand);
+            return command[1];
+        }catch (ArrayIndexOutOfBoundsException e){
+            JOptionPane.showMessageDialog(null, "Escriu be les commandes");
+        }
+        return "";
 
 
-        return command[1];
+
     }
 
     @Override
@@ -180,6 +200,11 @@ public class pulls extends JFrame implements ActionListener {
                         JOptionPane.showMessageDialog(null, "Sense Pulls, prova mes tard");
                         counter = 0;
                     }
+                    break;
+                case "rick":
+                    ricktroll();
+                    break;
+                case "":
                     break;
                 default:
                     JOptionPane.showMessageDialog(null, "Ho hi ha cap comanda així");
