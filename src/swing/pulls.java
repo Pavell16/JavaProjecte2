@@ -12,7 +12,8 @@ import java.io.IOException;
 public class pulls extends JFrame implements ActionListener {
     private JLabel title, Coins;
     public String Cname = "", CGender = "", Canime = "", Cphoto = "", price="";
-    public int doraCoins = 0, counter = 10;
+    public int counter = 10;
+    public long doraCoins = 0;
     private static JTextField comands;
     private JButton send;
 
