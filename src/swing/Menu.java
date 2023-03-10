@@ -58,7 +58,7 @@ public class Menu extends JFrame implements ActionListener{
     public static void main(String[] args){
         //Homepage
         Menu Homepage = new Menu();
-        Homepage.setBounds(700,0,1100, 700);
+        Homepage.setBounds(700,0,1100, 500);
         Homepage.setResizable(true);
         Homepage.setTitle("MudaeMadeInChina");
         Homepage.setVisible(true);
