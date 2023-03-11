@@ -36,7 +36,14 @@ public class dataBase extends JFrame {
                   {"17", "Satoru Gojo", "590", "Masculí", "Jujutsu Kaisen", "/swing/img/SatoruGojo.jpg"},
                   {"18", "Edward Elric", "350", "Masculí", "FullMetal Alchemist Brotherhood", "/swing/img/EdwardElric.jpg"},
                   {"19", "Sukuna", "400", "Masculí", "Jujutsu Kaisen", "/swing/img/Sukuna.jpg"},
-                  {"20", "Levi Ackerman", "500", "Masculí", "Shingeki no Kyojin", "/swing/img/LeviAckerman.jpg"}
+                  {"20", "Levi Ackerman", "500", "Masculí", "Shingeki no Kyojin", "/swing/img/LeviAckerman.jpg"},
+                  {"21","Noelle Silva","270","Femení","Black Clover","/swing/img/noelle.jpg"},
+                  {"22","Rin Tohsaka","790","Femení","Fate/Stay Night","/swing/img/rin.jpg"},
+                  {"23","Yuno Gasai","550","Femení","Mirai Nikki","/swing/img/yunogasai.jpg"},
+                  {"24","Emma ","610","Femení","Yakusoku no Neverland","/swing/img/emma.jpg"},
+                  {"25","Maka Albarn","170","Femení","Soul Eater","/swing/img/maka.jpg"},
+                  {"26","Akame","430","Femení","Akame Ga Kill","/swing/img/akame.jpg"},
+
         };
         String[] columnNames = {"ID", "Nom", "Preu", "Genere", "Anime", "IMG"};
 
