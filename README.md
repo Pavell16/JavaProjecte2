@@ -19,7 +19,7 @@
  
  La tercera opció ens porta a una finestra en la qual podrem provar la nostra sort extraient un personatge raduritzat de la nostra base de dades afegint el valor d'aquest en la nostra cartera (doraCoins)
  
- *Les monedes augmenten segons van jugant, però a causa de la inexperiència i la falta de temps i creativitat dels creadors de moment només fa de bonic
+ * (Les monedes augmenten segons van jugant, però a causa de la inexperiència i la falta de temps i creativitat dels creadors de moment només fa de bonic)
  
  La quarta opció ens mostra la llista de comandes que podem utilitzar en la pàgina de rolls (tercera opció) per a extreure els personatges desitjats
  
