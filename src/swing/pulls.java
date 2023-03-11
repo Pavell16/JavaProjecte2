@@ -1,21 +1,23 @@
 package swing;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
 import java.util.Random;
 import java.util.regex.Pattern;
 import java.io.IOException;
 
 
 public class pulls extends JFrame implements ActionListener {
-    private JLabel title, Coins;
+    private JLabel title, Coins, coinIMG, logo;
     public String Cname = "", CGender = "", Canime = "", Cphoto = "", price="";
     public int counter = 10;
     public long doraCoins = 0;
     private static JTextField comands;
-    private JButton send;
+    private JButton send, returnMenu;
 
     public  String[][] characters = {
             {"1", "Kim Dokja", "220", "Masculí", "Omniscient Reader's Viewpoint", "/swing/img/dokja.jpg"},
@@ -45,7 +47,7 @@ public class pulls extends JFrame implements ActionListener {
             {"25","Maka Albarn","170","Femení","Soul Eater","/swing/img/maka.jpg"},
             {"26","Akame","430","Femení","Akame Ga Kill","/swing/img/akame.jpg"},
     };
-    public pulls(){
+    public pulls() throws IOException {
         //Title Start
         setLayout(null);
         title = new JLabel("Pulls");
@@ -67,17 +69,38 @@ public class pulls extends JFrame implements ActionListener {
         add(send);
         //Send END
 
+        //return to menu
+        returnMenu = new JButton("Menú");
+        returnMenu.setBounds(210, 200, 100, 30);
+        returnMenu.addActionListener(this);
+        add(returnMenu);
+        //return to menu END
+
         //DoraCoins
         Coins = new JLabel("DoraCoins" + doraCoins);
         Coins.setBounds(400,5,100,30);
         add(Coins);
         //DoraCoins
+
+        //Coin Image
+        BufferedImage image = ImageIO.read(getClass().getResource("/swing/img/or (1)(2).png"));
+        coinIMG = new JLabel(new ImageIcon(image));
+        coinIMG.setBounds(350, 2, 50, 41);
+        add(coinIMG);
+        //CoinImage END
+
+        //logo
+        BufferedImage image2 = ImageIO.read(getClass().getResource("/swing/img/mudaehomeimg.jpg"));
+        logo = new JLabel(new ImageIcon(image2));
+        logo.setBounds(75, 250, 400, 400);
+        add(logo);
+        //logo
     }
 
-    public static void main(String args[]){
+    public static void main(String args[]) throws IOException {
         //Homepage
         pulls Homepage = new pulls();
-        Homepage.setBounds(0,0,560,550);
+        Homepage.setBounds(0,0,560,700);
         Homepage.setResizable(false);
         Homepage.setTitle("MudaePulls");
         Homepage.setVisible(true);
@@ -89,6 +112,15 @@ public class pulls extends JFrame implements ActionListener {
 
 
     public void pullCharacterMale(){
+        /**
+         * Extreu un número aleatori i busca en la base de dades el numero corresponent i extreu les dades de la fila corresponent.
+         *
+         * Una vegada extreta la info es guarda en variables i es arrecla en un JPanel per mostrar el resultat
+         *
+         * adicionalment aquest metode comproba el genere del personatge i si no es masculi fa ua recursivitat fins que treu un personatge masculí
+         */
+
+
         Random random = new Random();
         int characterpull = random.nextInt((26-1)+1)+1;
 
@@ -120,6 +152,14 @@ public class pulls extends JFrame implements ActionListener {
     };
 
     public void pullCharacterFemale(){
+
+        /**
+         * Extreu un número aleatori i busca en la base de dades el numero corresponent i extreu les dades de la fila corresponent.
+         *
+         * Una vegada extreta la info es guarda en variables i es arrecla en un JPanel per mostrar el resultat
+         *
+         * adicionalment aquest metode comproba el genere del personatge i si no es femení fa ua recursivitat fins que treu un personatge femení
+         */
         Random random = new Random();
         int characterpull = random.nextInt((26-1)+1)+1;
 
@@ -220,6 +260,17 @@ public class pulls extends JFrame implements ActionListener {
             }
 
 
+
+        } else if (e.getSource() == returnMenu) {
+            Menu homepage = null;
+            try {
+                homepage = new Menu();
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+            homepage.setVisible(true);
+            homepage.setBounds(250,250,1100, 500);
+            this.dispose();
 
         }
     }
