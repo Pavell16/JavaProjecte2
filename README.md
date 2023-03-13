@@ -4,7 +4,7 @@
  
  Començant tenim el menú principal que ens dona 4 opcions a escollir
  
- 1- Veure la base de dades \n
+ 1- Veure la base de dades
  2- Visitar la botiga
  3- Tirar rolls
  4- Llista de comandes
